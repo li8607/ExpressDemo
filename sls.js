@@ -33,6 +33,10 @@ app.get('/500', (req, res) => {
   res.status(500).send('Server Error')
 })
 
+app.get('/feature', (req, res) => {
+  res.sendFile(path.join(__dirname, 'feature.html'))
+})
+
 // Error handler
 app.use(function(err, req, res, next) {
   console.error(err)
