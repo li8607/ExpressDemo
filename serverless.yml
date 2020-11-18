@@ -1,0 +1,18 @@
+component: express
+name: expressDemo
+app: express-app
+stage: ${env:STAGE}
+
+inputs:
+  src:
+    src: ./
+    exclude:
+      - .env
+  region: ap-guangzhou
+  runtime: Nodejs10.15
+  funcitonName: ${name}-${stage}-${app}
+  apigatewayConf:
+    protocols:
+      - http
+      - https
+    environment: release
